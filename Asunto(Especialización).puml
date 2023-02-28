@@ -1,6 +1,6 @@
 @startuml Asunto
 entity Persona {
-  * IdPersona
+  *IdPersona
   CI
   Nombre
   Celular
@@ -11,14 +11,14 @@ entity Cliente extends Persona {
 }
 
 entity Asunto{
-  *Numero_expediente
+  *Número_expediente
   Fecha_inicio
   Fecha_fin
   Estado
 }
 
 entity Abogado extends Persona {
-  Registro_de_Abogado
+  Registro_Abogado
 }	
 
 Cliente ||--|{ Asunto
