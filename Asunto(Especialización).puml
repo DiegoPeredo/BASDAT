@@ -1,28 +1,28 @@
 @startuml Asunto
-entity "Persona" as ePersona {
+entity Persona {
+  * IdPersona
   CI
   Nombre
   Celular
   Dirección
 }
 
-entity "Cliente" as eCliente {
-  * idCliente
+entity Cliente extends Persona {
 }
 
-entity "Asunto" as eAsunto{
+entity Asunto{
   *Numero_expediente
   Fecha_inicio
   Fecha_fin
   Estado
 }
 
-entity "Abogado" as eAbogado {
-  * idAbogado
+entity Abogado extends Persona {
+  Registro_de_Abogado
 }	
 
-ePersona ..|> eCliente
-ePersona ..|> eAbogado
+Cliente ||--|{ Asunto
+Abogado }o--|{ Asunto   
 
 @enduml
 
