@@ -1,0 +1,26 @@
+@startuml Zoo
+entity Zoo {
+  * idZoo
+  Nombre
+  Ciudad
+  Pais
+  Tamano
+  Presupuesto_anual
+}
+
+entity Especie {
+  * idEspecie
+  Nombre_vulgar
+  Nombre_cientifico
+  Familia
+  Peligro_extincion
+}
+
+entity Animal {
+  * idAnimal
+  Sexo
+  Anio_nacimiento
+  Pais_origen
+  Continente
+}
+@enduml
