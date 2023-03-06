@@ -1,0 +1,51 @@
+@startuml universidad
+hide circle 
+skinparam componentStyle uml2
+skinparam component <<Entity>> #A9DCDF
+skinparam backgroundColor #FFFFFF
+entity "Asignatura" as Asignatura {
+*Id_departamento
++Nombre
++Curso 
++Grupo Teorico
++Grupo Practico 
++Tipo
++Credito_Teoricas 
++Credito_Laboratoria 
++Limite_Admision_Optativa
++Duracion
++Libre_Configuracion
+}
+entity "Departamento" as Departamento {
+*Id_Asignatura
++Nombre
+}
+entity "Area de conocimiento" as AC {
+*Id_Area 
++Nombre 
+}
+entity "Profesor" as Profesor {
+*Id_Profesor
++Nombre 
++Apellido
++Despacho
+}
+entity "Titulacion" as Titulacion{
+*Id_Titulacion
++Nombre 
+}
+entity "Horario consulta" as HC{
+*Id_Horario_Consulta
++Dia 
++Hora 
+}
+
+Asignatura}|--||AC  
+Asignatura}|--|{Profesor 
+Asignatura}|--|{Titulacion 
+AC }|--||Departamento
+Asignatura}o--o{Asignatura : Incompatible 
+Asignatura}o--o{Asignatura : Equivalente
+Asignatura}|--|{Titulacion : Libre configuracion 
+Profesor ||--o{HC 
+@enduml
