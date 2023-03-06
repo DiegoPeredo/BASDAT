@@ -1,0 +1,41 @@
+@startuml
+
+entity "Piloto" as ePiloto {
+  * codigoPiloto
+  Nombre 
+  Tiempo_vuelo
+}
+
+entity "Tripulacion" as eTripulacion {
+  * codigoTripulacion
+  Nombre
+}
+
+entity "Vuelo" as eVuelo {
+  * codigoVuelo
+  Origen
+  Destino
+  Hora
+}
+
+entity "Avion" as eAvion {
+  * codigoAvion
+  Tipo
+}
+
+entity "Base" as eBase {
+  *idBase
+  Nombre
+}
+
+diamond fecha
+eVuelo }o-- fecha
+ePiloto }|-- fecha
+eAvion  }|-- fecha
+eTripulacion }|-- fecha
+eBase  ||--|{ ePiloto
+eBase  ||--|{ eAvion
+eBase  ||--o{ eTripulacion
+
+@enduml
+

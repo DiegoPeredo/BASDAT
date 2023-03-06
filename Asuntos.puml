@@ -1,0 +1,29 @@
+@startuml asuntos
+entity "Cliente" as eCliente {
+  * idCliente
+  CI
+  Nombre
+  Celular
+  Direccion
+}
+
+entity "Asunto" as eAsunto{
+  *Numero_expediente
+  Fecha_inicio
+  Fecha_fin
+  Estado
+}
+
+entity "Abogado" as eAbogado {
+  * idAbogado
+  CI
+  Nombre
+  Celular
+  Direccion
+}
+
+eAsunto }|--|{ eAbogado
+eCliente }|--|{ eAsunto
+
+@enduml
+
