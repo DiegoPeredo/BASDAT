@@ -3,24 +3,24 @@ entity Zoo {
   * idZoo
   Nombre
   Ciudad
-  Pais
-  Tamano
+  País
+  Tamaño
   Presupuesto_anual
 }
 
 entity Especie {
   * idEspecie
   Nombre_vulgar
-  Nombre_cientifico
+  Nombre_científico
   Familia
-  Peligro_extincion
+  Peligro_extinción
 }
 
 entity Animal {
   * idAnimal
   Sexo
-  Anio_nacimiento
-  Pais_origen
+  Año_nacimiento
+  País_origen
   Continente
 }
 @enduml

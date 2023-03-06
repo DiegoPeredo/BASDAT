@@ -1,4 +1,4 @@
-@startuml Asunto
+@startuml Asuntos_especializados
 entity Persona {
   *IdPersona
   CI

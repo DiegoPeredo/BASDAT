@@ -1,4 +1,4 @@
-@startuml asuntos
+@startuml Asuntos
 entity "Cliente" as eCliente {
   * idCliente
   CI

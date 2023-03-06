@@ -1,4 +1,4 @@
-@startuml universidad
+@startuml Universidad
 hide circle 
 skinparam componentStyle uml2
 skinparam component <<Entity>> #A9DCDF
