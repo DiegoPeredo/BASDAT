@@ -1,0 +1,62 @@
+@startuml Radio
+
+entity Emisora {
+  *idEmisora
+  NIF
+  Nombre
+  Direccion_postal
+  Nombre_director
+  Banda_hertziana
+  Provincia
+}
+
+entity Cadena {
+  *idCadena
+  Nombre_representativo
+  Nombre_director
+}
+
+entity Programa {
+  *idPrograma
+  Nombre
+  Responsable 
+}
+
+entity Franja_horaria {
+  *idFranja_horaria
+  Hora_inicio
+  Dia_semana
+  Duracion
+}
+
+entity Empresa_comunicacion {
+  *idEmpresa
+  NIF
+  Nombre
+  Nombre_director
+  Direccion_postal
+}
+
+entity Publicidad {
+  *idPublicidad
+  Duracion
+}
+
+entity Patrocinador {
+  *NumeroContrato
+  Nombre_contrato
+  Nombre_patrocinador
+  Duracion
+  Importe
+}
+
+Cadena |o--|{ Emisora
+Cadena |o--|| Emisora
+Cadena }|--|| Empresa_comunicacion
+Programa ||--|{ Franja_horaria
+Programa }|--|| Emisora
+Programa }|--o| Cadena
+Publicidad }|--|| Patrocinador
+Publicidad }|--o| Programa
+Publicidad -- Programa
+@enduml
