@@ -50,13 +50,12 @@ entity Patrocinador {
   Importe
 }
 
-Cadena |o--|{ Emisora
-Cadena |o--|| Emisora
-Cadena }|--|| Empresa_comunicacion
+Cadena |o--|{ Emisora :sede
+Cadena |o--|| Emisora :se asocia
+Cadena }|--|| Empresa_comunicacion :se asocia
 Programa ||--|{ Franja_horaria
 Programa }|--|| Emisora
 Programa }|--o| Cadena
 Publicidad }|--|| Patrocinador
-Publicidad }|--o| Programa
-Publicidad -- Programa
+Publicidad }|--o| Programa :costo publicidad
 @enduml
