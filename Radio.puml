@@ -43,7 +43,7 @@ entity Publicidad {
 }
 
 entity Patrocinador {
-  *NumeroContrato
+  *Numero_Contrato
   Nombre_contrato
   Nombre_patrocinador
   Duracion
