@@ -1,4 +1,4 @@
-@startuml
+@startuml Recetario
 
 entity Receta{
   *idReceta
@@ -13,18 +13,11 @@ entity Pasos_receta {
   Tiempo
   Comentario
 }
-
-entity Tipo_plato{
-  *Numero_clave
-  Precio
-  Comentario  
-}
-
-entity Ingrediente{
+ 
+entity Ingrediente {
   *idIngrediente
   Nombre
   Calorias
-  Cantidad
   Unidad
 }
 
@@ -41,10 +34,20 @@ entity Menu {
 
 entity Plato {
   *IdPlato
-  Nombre 
+  Nombre
+  Precio
+  Comentario
+  Tipo_plato
 }
 
+Receta *--|{ Pasos_receta
+Receta |o--|{ Pasos_receta
+Pasos_receta *--|{ Ingrediente :-[Cantidad]
+Pasos_receta }o--|{ Utensilio
 Plato ||--|{ Receta
-Receta -- Pasos_receta
+Plato *--|| Ingrediente :-[Principal]
+Plato }|--o Menu :-[Primero]
+Plato }|--o Menu :-[Segundo]
+Plato }|--o Menu :-[Postre]
 
 @enduml
