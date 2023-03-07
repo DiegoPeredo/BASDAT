@@ -1,0 +1,50 @@
+@startuml
+
+entity Receta{
+  *idReceta
+  Tiempo_ejecucion
+  Fuente
+  Ubicacion_fisica
+}
+
+entity Pasos_receta {
+  *idReceta
+  Operacion
+  Tiempo
+  Comentario
+}
+
+entity Tipo_plato{
+  *Numero_clave
+  Precio
+  Comentario  
+}
+
+entity Ingrediente{
+  *idIngrediente
+  Nombre
+  Calorias
+  Cantidad
+  Unidad
+}
+
+entity Utensilio {
+  *idUtensilio
+  Nombre_utensilio
+}
+
+entity Menu {
+  *Correlativo_menu
+  Precio
+  Comentario
+}
+
+entity Plato {
+  *IdPlato
+  Nombre 
+}
+
+Plato ||--|{ Receta
+Receta -- Pasos_receta
+
+@enduml
