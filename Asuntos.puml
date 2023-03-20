@@ -23,7 +23,7 @@ entity "Abogado" as eAbogado {
 }
 
 eAsunto }|--|{ eAbogado
-eCliente }|--|{ eAsunto
+eCliente ||--|{ eAsunto
 
 @enduml
 

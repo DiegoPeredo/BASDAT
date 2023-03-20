@@ -1,0 +1,39 @@
+@startuml Asuntos(Lógico)
+
+class Persona{
+     id_Persona  entero  PK  
+     Nombre      texto    
+     Celular     texto 
+     Dirección   texto 
+     CI          texto
+}
+
+class Cliente{
+    id_Cliente   entero PK , FK
+}
+
+class Abogado_Asunto {
+    id_Abogado      entero PK , FK 
+    Nro_Expediente  entero PK , FK 
+}
+
+class Asunto{
+    Nro_Expediente      entero PK
+    Fecha_Inicio        texto
+    Fecha_Finalización  Texto
+    Estado              texto
+    id_Cliente          entero FK
+}
+
+class Abogado{
+    id_Abogado        entero PK , FK
+    Registro_Abogado  entero FK
+}
+
+Persona "1" -- "1" Abogado
+Persona "1" -- "1" Cliente
+Abogado "1" -- "N" Abogado_Asunto
+Abogado_Asunto "N" -- "1" Asunto
+Asunto "N" -- "1" Cliente
+
+@enduml
