@@ -22,7 +22,7 @@ entity Abogado extends Persona {
 }	
 
 Cliente ||--|{ Asunto
-Abogado }o--|{ Asunto   
+Abogado }|--|{ Asunto   
 
 @enduml
 

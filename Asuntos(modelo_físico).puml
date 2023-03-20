@@ -1,0 +1,40 @@
+@startuml Asuntos (Físico)
+
+class Persona{
+
+     id_Persona  int  PK  
+     Nombre      varchar(80)    
+     Celular     varchar(33) 
+     Dirección   varchar(100) 
+     CI          varchar(20)
+}
+
+class Cliente{
+    id_Cliente int PK , FK
+}
+
+class Abogado_Asunto {
+    id_Abogado int PK , FK 
+    Nro_Expediente int PK , FK 
+}
+
+class Asunto{
+    Nro_Expediente int PK
+    Fecha_Inicio varchar(10)
+    Fecha_Finalización varchar(10)
+    Estado varchar(20)
+    id_Cliente int FK
+}
+
+class Abogado{
+    id_Abogado int PK , FK
+    Registro_Abogado int FK
+}
+
+Persona "1" -- "1" Abogado
+Persona "1" -- "1" Cliente
+Abogado "1" -- "N" Abogado_Asunto
+Abogado_Asunto "N" -- "1" Asunto
+Asunto "N" -- "1" Cliente
+
+@enduml
