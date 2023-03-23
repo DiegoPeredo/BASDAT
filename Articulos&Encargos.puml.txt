@@ -1,0 +1,39 @@
+@startuml
+entity Cliente{
+ *nro_cliente
+ saldo
+ limite_crédito
+ descuento 
+}
+
+entity Direccion_envio{
+ *id_direccion
+ calle
+ numero_casa 
+}
+
+entity Pedido{
+ *id_pedido
+ nro_cliente FK
+ fecha
+}
+
+entity Fabrica{
+ *nro_fabrica
+ telefono
+}
+
+entity Articulo{
+ *nro_articulo
+ descripcion
+}
+
+
+
+
+Direccion_envio }|-|{ Cliente
+Direccion_envio ||--o{ Pedido
+Articulo }|--o{ Fabrica : |CANTIDAD|
+Articulo }|-o{ Pedido : |CANTIDAD|
+
+@enduml
